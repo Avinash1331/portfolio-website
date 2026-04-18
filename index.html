@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avinash Mishra Portfolio</title>
+  <meta name="description" content="Avinash Mishra is a senior software developer in Mumbai with experience across .NET, ASP.NET Core, Web API, microservices, API integrations, and high-performance application delivery." />
+  <meta property="og:title" content="Avinash Mishra | Senior Software Developer" />
+  <meta property="og:description" content="Portfolio website for Avinash Mishra, Senior Software Developer based in Mumbai." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3.2rem, 0.8rem + 6vw, 7rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fcfbf8; --color-surface-offset: #f0ede7; --color-surface-offset-2: #e8e3da; --color-surface-dynamic: #ddd7cd; --color-divider: #ddd8d0; --color-border: #d3cec5;
+      --color-text: #221f19; --color-text-muted: #666158; --color-text-faint: #989184; --color-text-inverse: #faf8f2;
+      --color-primary: #0e6369; --color-primary-hover: #0a4b50; --color-primary-active: #07353a; --color-primary-highlight: #d5e4e2;
+      --color-secondary: #815341; --color-accent: #c69446;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.85rem; --radius-xl: 1.2rem; --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(17, 16, 14, 0.05); --shadow-md: 0 12px 32px rgba(17, 16, 14, 0.08); --shadow-lg: 0 24px 60px rgba(17, 16, 14, 0.12);
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-default: 1160px;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --font-display: 'Cabinet Grotesk', 'Inter', sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #131210; --color-surface: #1a1917; --color-surface-2: #201e1b; --color-surface-offset: #24211e; --color-surface-offset-2: #2b2824; --color-surface-dynamic: #34302c; --color-divider: #2e2b27; --color-border: #3f3a35;
+      --color-text: #e6e0d5; --color-text-muted: #b5aea3; --color-text-faint: #847c71; --color-text-inverse: #1b1917;
+      --color-primary: #61a9af; --color-primary-hover: #84bec3; --color-primary-active: #a4d0d4; --color-primary-highlight: #223637;
+      --color-secondary: #d4a085; --color-accent: #ddb56d;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); --shadow-md: 0 12px 32px rgba(0,0,0,0.28); --shadow-lg: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-padding-top: 5rem; }
+    body { min-height: 100dvh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 0.98; letter-spacing: -0.045em; }
+    p { max-width: 68ch; color: var(--color-text-muted); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    .skip-link { position: absolute; left: -999px; top: 1rem; z-index: 100; background: var(--color-primary); color: var(--color-text-inverse); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); }
+    .skip-link:focus { left: 1rem; }
+    .container { width: min(calc(100% - 2rem), var(--content-default)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 80; backdrop-filter: blur(18px); background: color-mix(in srgb, var(--color-bg) 84%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); }
+    .header-row { min-height: 4.8rem; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); font-weight: 700; }
+    .brand-mark { width: 2.85rem; height: 2.85rem; padding: 0.55rem; border-radius: 0.95rem; background: linear-gradient(135deg, var(--color-primary-highlight), color-mix(in srgb, var(--color-surface) 88%, white)); border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent); box-shadow: var(--shadow-sm); }
+    .brand-copy { display: grid; gap: 0.1rem; }
+    .brand-copy strong { font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; }
+    .brand-copy span { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .nav { display: flex; align-items: center; gap: var(--space-5); }
+    .nav a { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .nav a:hover, .nav a.active { color: var(--color-text); }
+    .theme-toggle { width: 2.75rem; height: 2.75rem; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); background: var(--color-surface); }
+    .hero { padding: clamp(var(--space-16), 11vw, var(--space-32)) 0 var(--space-16); }
+    .hero-grid { display: grid; grid-template-columns: 1.18fr 0.82fr; gap: var(--space-12); align-items: end; }
+    .eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); padding: 0.45rem 0.85rem; border-radius: var(--radius-full); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); background: var(--color-surface-offset); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-muted); }
+    .hero h1 { font-size: var(--text-hero); max-width: 8.5ch; margin-top: var(--space-5); }
+    .hero-copy { display: grid; gap: var(--space-6); }
+    .hero-copy p.lead { font-size: var(--text-lg); max-width: 36ch; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .btn { min-height: 3rem; padding: 0.85rem 1.25rem; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: var(--text-sm); font-weight: 600; transition: transform var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), color var(--transition-interactive); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
+    .btn-secondary { border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent); background: transparent; }
+    .hero-panel { position: relative; overflow: hidden; padding: var(--space-8); border-radius: 1.6rem; background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 90%, white), var(--color-surface-offset)); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); box-shadow: var(--shadow-lg); }
+    .hero-panel::before { content: ""; position: absolute; inset: auto -5% -15% 20%; height: 16rem; background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 22%, transparent), transparent 62%); filter: blur(18px); }
+    .hero-panel > * { position: relative; z-index: 1; }
+    .stat-grid { display: grid; gap: var(--space-4); }
+    .stat-card { padding: var(--space-5); border-radius: var(--radius-xl); background: color-mix(in srgb, var(--color-surface-2) 92%, white); border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); }
+    .stat-card strong { display: block; font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-1); }
+    .stat-card span { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .section { padding: clamp(var(--space-12), 8vw, var(--space-24)) 0; }
+    .section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-10); }
+    .section-head h2 { font-size: var(--text-2xl); max-width: 12ch; }
+    .muted-label { font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-faint); }
+    .grid-2 { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-10); }
+    .card { background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); border-radius: 1.25rem; padding: var(--space-8); box-shadow: var(--shadow-sm); }
+    .about-points, .expertise-grid, .project-grid, .timeline, .cert-grid, .contact-list { display: grid; gap: var(--space-4); }
+    .about-points article, .timeline-item, .project-card, .cert-item, .contact-item { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface-2); border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); }
+    .about-points strong, .timeline-item h3, .project-card h3, .cert-item h3 { display: block; margin-bottom: var(--space-2); font-size: var(--text-lg); color: var(--color-text); }
+    .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .expertise-pill { padding: 0.9rem 1rem; border-radius: var(--radius-full); background: var(--color-surface-offset); border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); font-size: var(--text-sm); color: var(--color-text); }
+    .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .project-card { min-height: 21rem; display: grid; gap: var(--space-4); }
+    .project-meta { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .project-meta span { padding: 0.35rem 0.7rem; border-radius: var(--radius-full); background: var(--color-surface-offset); font-size: var(--text-xs); color: var(--color-text-muted); }
+    .timeline-item { display: grid; grid-template-columns: 10rem 1fr; gap: var(--space-5); }
+    .timeline-item time { font-size: var(--text-sm); color: var(--color-text-faint); }
+    .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-card { display: grid; gap: var(--space-4); }
+    .contact-item strong { display: block; margin-bottom: var(--space-1); }
+    .footer { padding: var(--space-10) 0 var(--space-16); border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease, transform 700ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1100px) {
+      .hero-grid, .grid-2, .timeline-item { grid-template-columns: 1fr; }
+      .project-grid, .cert-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav { display: none; }
+      .hero h1, .section-head h2 { max-width: 100%; }
+      .project-grid, .expertise-grid, .cert-grid { grid-template-columns: 1fr; }
+      .hero-panel, .card { padding: var(--space-6); }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .reveal.visible, .btn:hover { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="Avinash Mishra portfolio home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 48L30 14L46 48" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 33H38" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M46 48L54 28" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Avinash Mishra</strong>
+          <span>Senior Software Developer</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Mumbai · SDE @ Morgan Stanley · .NET / Microservices</span>
+          <h1>Engineering secure, scalable backend systems for enterprise-grade products.</h1>
+          <p class="lead">Senior Software Developer with experience across C#, ASP.NET Core, Web API, Entity Framework, microservices architecture, API integrations, performance optimization, and migration from monolithic systems to distributed services.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work">Explore work</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/avinash-mishra-652b3917b/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+          </div>
+        </div>
+        <aside class="hero-panel reveal" aria-label="Profile highlights">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <strong>Senior Software Developer</strong>
+              <span>Current headline and public profile positioning.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Morgan Stanley</strong>
+              <span>Working as SDE in Mumbai since April 2025.</span>
+            </div>
+            <div class="stat-card">
+              <strong>2,239 followers</strong>
+              <span>Public LinkedIn audience with 500+ connections.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container grid-2">
+        <div class="section-head reveal">
+          <span class="muted-label">About</span>
+          <h2>Backend depth with full-stack execution capability</h2>
+          <p>The portfolio direction follows the reference site's clean, personal, section-led storytelling model while shifting the substance toward software engineering credibility, enterprise delivery, and architectural ownership.</p>
+        </div>
+        <div class="card reveal">
+          <div class="about-points">
+            <article>
+              <strong>Technical profile</strong>
+              <p>Senior .NET Software Engineer with strong expertise in C#, ASP.NET Core, Web API, Entity Framework, APIs, security-focused integrations, and scalable application design.</p>
+            </article>
+            <article>
+              <strong>Execution pattern</strong>
+              <p>Experience includes design, development, deployment, Agile delivery, system performance improvement, and migration from monolithic architecture to microservices.</p>
+            </article>
+            <article>
+              <strong>Domain exposure</strong>
+              <p>Worked in BFSI-oriented environments, including work associated with State Bank of India Mutual Fund during the NeoSOFT phase.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="muted-label">Expertise</span>
+          <h2>Core technologies and delivery strengths</h2>
+          <p>The skills section emphasizes the stack and patterns explicitly visible on your public profile instead of inflating the narrative with unsupported claims.</p>
+        </div>
+        <div class="card reveal">
+          <div class="expertise-grid">
+            <div class="expertise-pill">C#</div>
+            <div class="expertise-pill">ASP.NET Core</div>
+            <div class="expertise-pill">Web API</div>
+            <div class="expertise-pill">Entity Framework</div>
+            <div class="expertise-pill">Microservices Architecture</div>
+            <div class="expertise-pill">API Creation and Integrations</div>
+            <div class="expertise-pill">Security and Performance Optimization</div>
+            <div class="expertise-pill">Agile Methodologies</div>
+            <div class="expertise-pill">Backend Services</div>
+            <div class="expertise-pill">Angular</div>
+            <div class="expertise-pill">Full-Stack Development</div>
+            <div class="expertise-pill">Monolith to Microservices Migration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="muted-label">Selected work themes</span>
+          <h2>Portfolio stories framed from actual experience signals</h2>
+          <p>These project narratives are inferred from your public role descriptions and should be refined further with exact product names, measurable outcomes, and screenshots if you want a production-ready public launch.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-meta"><span>Microservices</span><span>.NET</span><span>Architecture</span></div>
+            <h3>Enterprise application modernization</h3>
+            <p>Led design, development, and deployment work for complex applications using microservices architecture, with emphasis on reliability, maintainability, and scalable service boundaries.</p>
+            <p>This card is positioned to represent your migration experience from monolithic architecture to microservices at ARCON.</p>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-meta"><span>APIs</span><span>Security</span><span>Performance</span></div>
+            <h3>Secure integration and API delivery</h3>
+            <p>Managed API creation and integrations with focus on security, performance optimization, and delivery quality in enterprise application environments.</p>
+            <p>This section is intended to communicate practical ownership over service interfaces rather than generic feature implementation.</p>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-meta"><span>BFSI</span><span>Scalability</span><span>Applications</span></div>
+            <h3>BFSI application engineering</h3>
+            <p>Built scalable and secure applications during the NeoSOFT phase for BFSI domain use cases connected to State Bank of India Mutual Fund.</p>
+            <p>This provides a domain-specific credibility block that anchors your experience in regulated, business-critical software environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="muted-label">Experience</span>
+          <h2>Career progression</h2>
+          <p>The timeline below is populated directly from the public experience information visible on your LinkedIn profile.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <time>Apr 2025 — Present</time>
+            <div>
+              <h3>Senior Software Developer · Morgan Stanley</h3>
+              <p>Mumbai-based role listed on the public profile under current experience, aligned with the headline SDE @ Morgan Stanley.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Mar 2025 — Present</time>
+            <div>
+              <h3>Senior Software Developer · Zen & Art</h3>
+              <p>Concurrent listing on the public profile, included here exactly as surfaced in the profile content.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Nov 2022 — Mar 2025</time>
+            <div>
+              <h3>Senior Software Developer · ARCON</h3>
+              <p>Led complex application design and deployment, API integrations, Agile delivery, system enhancement work, and monolith-to-microservices migration.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Dec 2020 — Nov 2022</time>
+            <div>
+              <h3>Software Developer · NeoSOFT Technologies</h3>
+              <p>Worked on BFSI domain applications, building scalable and secure software associated with State Bank of India Mutual Fund initiatives.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="muted-label">Certifications</span>
+          <h2>Learning and professional development</h2>
+          <p>The public profile shows a blend of cloud, AI, microservices, scrum, security, and project management learning signals.</p>
+        </div>
+        <div class="cert-grid">
+          <article class="cert-item reveal">
+            <h3>Generative AI Leadership Certification</h3>
+            <p>Udemy</p>
+          </article>
+          <article class="cert-item reveal">
+            <h3>AWS Certified Cloud Practitioner Cert Prep</h3>
+            <p>LinkedIn Learning</p>
+          </article>
+          <article class="cert-item reveal">
+            <h3>Microservices Foundations</h3>
+            <p>LinkedIn Learning</p>
+          </article>
+          <article class="cert-item reveal">
+            <h3>Microsoft Technology Associate: Security Fundamentals</h3>
+            <p>Microsoft</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container grid-2">
+        <div class="section-head reveal">
+          <span class="muted-label">Contact</span>
+          <h2>Professional links</h2>
+          <p>This section is intentionally lean, matching the reference site's direct personal-brand format instead of using an oversized contact form.</p>
+        </div>
+        <div class="card contact-card reveal">
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Name</strong>
+              <p>Avinash Mishra</p>
+            </div>
+            <div class="contact-item">
+              <strong>Role</strong>
+              <p>Senior Software Developer</p>
+            </div>
+            <div class="contact-item">
+              <strong>Location</strong>
+              <p>Mumbai, Maharashtra, India</p>
+            </div>
+            <div class="contact-item">
+              <strong>LinkedIn</strong>
+              <p><a href="https://www.linkedin.com/in/avinash-mishra-652b3917b/" target="_blank" rel="noopener noreferrer">linkedin.com/in/avinash-mishra-652b3917b</a></p>
+            </div>
+            <div class="contact-item">
+              <strong>Languages</strong>
+              <p>English, Hindi, Marathi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>Designed as a polished personal portfolio with a clean narrative structure inspired by buildwithrv.com and populated from public LinkedIn profile details.</p>
+      <a class="btn btn-secondary" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const renderIcon = () => {
+        toggle.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      };
+      renderIcon();
+      toggle.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        renderIcon();
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+
+      const links = [...document.querySelectorAll('.nav a')];
+      const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+      const setActive = () => {
+        const offset = window.scrollY + 120;
+        let current = sections[0]?.id;
+        sections.forEach(section => {
+          if (section.offsetTop <= offset) current = section.id;
+        });
+        links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+      };
+      setActive();
+      window.addEventListener('scroll', setActive, { passive: true });
+    })();
+  </script>
+</body>
+</html>
